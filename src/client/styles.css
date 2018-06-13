@@ -1,0 +1,40 @@
+body {
+    background-color : #e5e5e5 !important;
+}
+.head-section {
+    background: #3972cb;
+    padding : 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color : #f9f9f9;
+}
+@media screen and (min-height: 700px) {
+    .head-section {
+        height: 400px;
+    }
+}
+.head-title {
+    margin-bottom: 10px;
+}
+.page-title {
+    margin-top: 10px;
+    font-size: 20px;
+}
+.app-page-change {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.app-page-change > div {
+    cursor: pointer;
+    margin : 0 10px;
+    font-size: 18px;
+}
+.app-page-change > div:hover {
+    text-decoration: underline;
+}
+.app-page-change > .page-active {
+    color: #6610f2;
+}
