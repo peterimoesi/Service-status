@@ -76,3 +76,7 @@ td.faulty {
 .margin-auto {
     margin : auto;
 }
+.date-refresh {
+    margin-top : 20px;
+    font-style: italic;
+}

@@ -8,6 +8,7 @@ import {
 import pages from './pages.js';
 import NewService from './newService';
 import shortId from 'shortid';
+import ReactTimeAgo from 'react-time-ago';
 
 import './styles.css';
 
@@ -17,16 +18,17 @@ class IndexScreen extends React.Component {
         this.getData = this.getData.bind(this);
         this.interval = setInterval(this.getData, 1000 * 60 * 10); // refresh data every 10mins
         this.state = {
-            page : 'dataDog'
+            page : 'dataDog',
+            date : Date.now()
         };
     }
     componentDidMount() {
-        this.props.getData(this.state.page);
+        this.getData();
     }
 
     componentDidUpdate(prevProps, prevState) {
         if (prevState.page !== this.state.page) {
-            this.props.getData(this.state.page);
+            this.getData();
         }
     }
 
@@ -37,6 +39,9 @@ class IndexScreen extends React.Component {
 
     getData() {
         this.props.getData(this.state.page);
+        this.setState({ 
+            date : Date.now()
+         })
     }
 
     onChangePage(page) {
@@ -44,6 +49,7 @@ class IndexScreen extends React.Component {
     }
 
     render () {
+        console.log(Date.now(), this.state.date);
         return (
             <div>
                 <div className="head-section">
@@ -52,6 +58,12 @@ class IndexScreen extends React.Component {
                     </div>
                     <div className="page-title">
                         {pages[this.state.page].pageName}
+                    </div>
+                    <div className="date-refresh">
+                        <span>Last updated: </span>
+                        <ReactTimeAgo>
+                            {this.state.date}
+                        </ReactTimeAgo>
                     </div>
                 </div>
                 <div className="container">
