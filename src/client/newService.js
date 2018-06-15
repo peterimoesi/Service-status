@@ -69,7 +69,7 @@ class NewService extends React.Component {
                         <div className="form-group col-6 margin-auto">
                             <label htmlFor="page-title">Page name</label>
                             <input
-                                defaultValue={pages[this.props.page].pageName}
+                                value={pages[this.props.page].pageName}
                                 className="form-control"
                                 id="page-title"
                                 disabled
