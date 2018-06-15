@@ -27,7 +27,7 @@ class IndexScreen extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (prevState.page !== this.state.page) {
+        if (prevState.page !== this.state.page && this.state.page) {
             this.getData();
         }
     }
@@ -79,6 +79,11 @@ class IndexScreen extends React.Component {
                                 </div>
                             ))
                         }
+                            <div
+                                className={!this.state.page ? 'page-active' : ''}
+                            >
+                                New status page +
+                            </div>
                     </div>
                     <div className="table">
                         <table>
