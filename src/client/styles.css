@@ -23,6 +23,7 @@ body {
     font-size: 20px;
 }
 .app-page-change {
+    padding-top: 10px;
     display: flex;
     align-content: center;
     justify-content: center;
@@ -37,4 +38,41 @@ body {
 }
 .app-page-change > .page-active {
     color: #6610f2;
+}
+table {
+    margin-top: 30px;
+}
+table tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    transition-duration: 300ms;
+    height: 40px;
+}
+.table tr:nth-child(1) td {
+    border-top : 1px solid #9b9b9b;
+}
+td {
+    padding : 4px;
+    border : 1px solid #9b9b9b;
+}
+td.operational {
+    color : #5abb2e;
+}
+td.faulty {
+    color : #e07115;
+}
+.service-form, .service-form-cont {
+    margin-top : 30px;
+}
+.new-service-btn {
+    text-align: center;
+}
+.flex-item {
+    flex-wrap: wrap;
+    display: flex !important;
+    align-items: center !important;
+}
+.margin-auto {
+    margin : auto;
 }

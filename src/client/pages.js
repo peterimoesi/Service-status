@@ -4,17 +4,16 @@ export default {
     dataDog : {
         pageName : 'Datadog',
         table : {
-            'Title' : 7,
-            'Status' : 3 
+            'name' : 7,
+            'status' : 3 
         }
     },
     azure : {
         pageName : 'Azure',
-        key : 'azure',
         table : {
-            'Title' : 4,
-            'East Us' : 2,
-            'East Us 2' : 2,
+            'name' : 4,
+            'East US' : 2,
+            'East US 2' : 2,
             'North Europe' : 2 
         }
     }

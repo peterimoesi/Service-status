@@ -20,3 +20,10 @@ export function clearData() {
         type : 'CLEAR_DATA'
     }
 }
+
+export function saveData(data) {
+    return {
+        type : 'ADD_STATUS',
+        data
+    }
+}

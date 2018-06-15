@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
 const initialState = {
-    data : {}
+    data : []
 };
 
 const statusData = (state = {...initialState}, action) => {
@@ -15,12 +15,12 @@ const statusData = (state = {...initialState}, action) => {
             data : initialState
         };
     case 'ADD_STATUS': {
-        const dataGroup = state.data[action.dataGroupName]; // get datagroup from state
-        dataGroup.push(action.dataItem); // push new data to the group
-        state.data[action.dataGroupName] = dataGroup;
+        const data = state.data; // get datagroup from state
+        data.push(action.data); // push new data to the group
+        console.log(data);
         return {
             ...state,
-            data : {...state.data}
+            data : [...data]
         };
     }
     default:

@@ -6,6 +6,8 @@ import {
     clearData
 } from './globalActions';
 import pages from './pages.js';
+import NewService from './newService';
+import shortId from 'shortid';
 
 import './styles.css';
 
@@ -66,6 +68,39 @@ class IndexScreen extends React.Component {
                             ))
                         }
                     </div>
+                    <div className="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    {
+                                        Object.keys(pages[this.state.page].table).map(row => (
+                                            <td key={row} colSpan={pages[this.state.page].table[row]}>
+                                                {row}
+                                            </td>
+                                        ))
+                                    }
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    this.props.statusData.map(data => (
+                                        <tr key={data.id || shortId.generate()}>
+                                            {
+                                                Object.keys(pages[this.state.page].table).map(row => (
+                                                    <td key={row} colSpan={pages[this.state.page].table[row]} className={data[row] || 'faulty'}>
+                                                        <span>{data[row] || 'faulty'}</span>
+                                                    </td>
+                                                ))
+                                            }
+                                        </tr>
+                                    ))
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <NewService
+                        page={this.state.page}
+                    />
                 </div>
             </div>
         );
@@ -79,6 +114,7 @@ function mapStateToProps({ statusData }) {
 }
 
 IndexScreen.propTypes = {
+    statusData : PropTypes.array.isRequired,
     getData : PropTypes.func.isRequired,
     clearData : PropTypes.func.isRequired
 };
