@@ -41,7 +41,7 @@ class IndexScreen extends React.Component {
         this.props.getData(this.state.page);
         this.setState({ 
             date : Date.now()
-         })
+        });
     }
 
     onChangePage(page) {
@@ -79,11 +79,11 @@ class IndexScreen extends React.Component {
                                 </div>
                             ))
                         }
-                            <div
-                                className={!this.state.page ? 'page-active' : ''}
-                            >
+                        <div
+                            className={!this.state.page ? 'page-active' : ''}
+                        >
                                 New status page +
-                            </div>
+                        </div>
                     </div>
                     <div className="table">
                         <table>

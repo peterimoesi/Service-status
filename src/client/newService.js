@@ -34,6 +34,7 @@ class NewService extends React.Component {
     onChange(e) {
         const { service } = this.state;
         if (e.target.type === 'checkbox') {
+            // form data is hard coded to accept input with name attibute if "name" or checkbox
             service[e.target.name] = e.target.checked ? 'operational' : 'faulty';
         } else {
             service[e.target.name] = e.target.value;
@@ -42,7 +43,9 @@ class NewService extends React.Component {
     }
 
     toggleForm() {
+        // render or close the from component
         this.setState({ showForm : !this.state.showForm }, () => {
+            // reset the form data
             this.setState({ service : {
                 name : ''
             } });
@@ -50,6 +53,7 @@ class NewService extends React.Component {
     }
 
     saveService() {
+        // save new service with unique id
         this.props.saveData({...this.state.service, id : shortId.generate() });
     }
 
