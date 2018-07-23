@@ -1,7 +1,7 @@
 # Simple react-redux single page app
 
 + Created the react-redux environment
-•	Created table framework for status pages (pages.js)
++ Created table framework for status pages (pages.js)
 o	Table framework containing the column name and respective column span
 o	This way new status pages can be added to pages.js irrespective of number of columns
 •	I called Datadog Api to get list of services and filtered the array for the required service of interest
