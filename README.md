@@ -1,5 +1,5 @@
 What I did
-•	Created the react-redux environment
+Created the react-redux environment
 •	Created table framework for status pages (pages.js)
 o	Table framework containing the column name and respective column span
 o	This way new status pages can be added to pages.js irrespective of number of columns
